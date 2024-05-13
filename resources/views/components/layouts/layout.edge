@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    @vite([
+      'resources/css/boost.css',
+      'resources/js/app.js',
+    ])
+    {{{await $slots.css()}}}
+    </head>
+   
+
+  <body>
+    
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">formulaire-Adonis</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">l1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">register</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+   
+   {{{await $slots.main()}}}
+   
+   {{{await $slots.js()}}}
+
+
+   
+   
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+          <p>@ 2024 notre Projet. Tous droits réservés à Ricardo Onfroy.</p>
+        </div>
+      </footer>
+  </body>
+</html>

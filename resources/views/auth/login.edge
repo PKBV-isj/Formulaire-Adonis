@@ -1,0 +1,52 @@
+@layouts.auth({
+    title:"login",
+  })
+  @slot('css')
+    @vite([
+      'resources/css/logr.css'
+    ])
+  @end
+  <div class="container">
+      <div class="box">
+        <h2>
+         login
+        </h2>
+        <form action="#">
+          <div class="input_box">
+            
+            <input type="text" class="name" required>
+            <label>username</label>
+
+
+          </div>
+
+          <div class="input_box">
+  
+            <input type="text" class="password" required>
+            <label>password</label>
+            <div class="password_checkbox"><input type="checkbox"><p>show password</p>
+
+            </div>
+          </div>
+          <div class="input_box">
+  
+            <input type="text" class="email" required>
+            <label>email</label>
+          </div>
+          <button class="s_button" type="submit"> Creer mon compte</button>
+          <div class="login_link"><a href=""> possedz vous deja un compte?</a></div>
+
+        </form>
+
+      </div>
+      </div>
+  
+
+  
+  @slot('js')
+  @vite([
+    ''
+  ])
+  @end
+  @end
+  
