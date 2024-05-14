@@ -1,4 +1,4 @@
-@layouts.auth({
+@layouts.layout({
     title:"login",
   })
   @slot('css')
@@ -6,7 +6,8 @@
       'resources/css/logr.css'
     ])
   @end
-  <div class="container">
+  <main>
+  <div class="containeer">
       <div class="box">
         <h2>
          login
@@ -22,30 +23,27 @@
 
           <div class="input_box">
   
-            <input type="text" class="password" required>
-            <label>password</label>
-            <div class="password_checkbox"><input type="checkbox"><p>show password</p>
+            <input type="password" class="password" required>
+            <label  >password</label>
+            <div class="password_checkbox"><input type="checkbox" id="showPasswordCheckbox"><p  for="showPasswordCheckbox>show password</p>
 
             </div>
           </div>
-          <div class="input_box">
-  
-            <input type="text" class="email" required>
-            <label>email</label>
-          </div>
-          <button class="s_button" type="submit"> Creer mon compte</button>
-          <div class="login_link"><a href=""> possedz vous deja un compte?</a></div>
+          <div class="forgot_password"> <a href="#"> mot de passe oublié?</a></div>
+        
+          <button class="s_button" type="submit">login</button>
+          <div class="login_link"> <a href="/login"> vous n'avez pas de compte?</a></div>
 
         </form>
 
       </div>
       </div>
-  
+  </main>
 
   
   @slot('js')
   @vite([
-    ''
+    'resources/js/auth/login.js'
   ])
   @end
   @end

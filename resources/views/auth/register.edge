@@ -1,15 +1,16 @@
 @layouts.auth({
-    title:"register",
+    title:"login",
   })
   @slot('css')
     @vite([
       'resources/css/logr.css'
     ])
   @end
-  <div class="container">
+  <main>
+  <div class="containeer">
       <div class="box">
         <h2>
-          register
+      SIGN_UP
         </h2>
         <form action="#">
           <div class="input_box">
@@ -24,7 +25,7 @@
   
             <input type="text" class="password" required>
             <label>password</label>
-            <div class="password_checkbox"><input type="checkbox"><p>show password</p>
+            <div class="password_checkbox"><input type="checkbox"  id="showPasswordCheckbox"><p for="showPasswordCheckbox">show password</p>
 
             </div>
           </div>
@@ -41,11 +42,11 @@
       </div>
       </div>
   
-
+</main>
   
   @slot('js')
   @vite([
-    ''
+    'resources/js/auth/login.js'
   ])
   @end
   @end
