@@ -1,0 +1,15 @@
+@let(title="sign in")
+@include('partials/header')
+
+<h1 class="text-center">{{title}}</h1>
+
+<form action="" method="post" class="w-75 mx-auto p-3 bg-light rounded" enctype="multipart/form-data">
+    {{ csrfField() }}
+    @!component('components/input', { name : 'username', label : 'Nom Utilisateur'})
+    @!component('components/input', { name : 'email', label : 'email', type : 'email'})
+    @!component('components/input', { name : 'thumbnail', label : 'photo de profile', type : 'file'})
+    @!component('components/input', { name : 'password', label : 'Mot de passe', type : 'password'})
+    <button class="btn btn-outline-info mt-2" type="submit">{{title}}</button>
+</form>
+
+@include('partials/footer')

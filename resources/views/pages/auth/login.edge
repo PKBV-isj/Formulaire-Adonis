@@ -1,0 +1,13 @@
+@let(title="Login")
+@include('partials/header')
+
+<h1 class="text-center">{{title}}</h1>
+
+<form action="" method="post" class="w-75 mx-auto p-3 bg-light rounded">
+    {{csrfField()}}
+    @!component('components/input', { name : 'email', label : 'email', type : 'email'})
+    @!component('components/input', { name : 'password', label : 'Mot de passe', type : 'password'})
+    <button class="btn btn-outline-info mt-2" type="submit">{{title}}</button>
+</form>
+
+@include('partials/footer')
