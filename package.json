@@ -61,6 +61,7 @@
     "@vinejs/vine": "^2.0.0",
     "bootstrap": "^5.3.3",
     "edge.js": "^6.0.2",
+    "jdenticon": "^3.3.0",
     "luxon": "^3.4.4",
     "mysql2": "^3.9.7",
     "reflect-metadata": "^0.2.2"
