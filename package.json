@@ -59,6 +59,7 @@
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^2.0.2",
     "@vinejs/vine": "^2.0.0",
+    "chart.js": "^4.4.3",
     "edge.js": "^6.0.2",
     "luxon": "^3.4.4",
     "mysql2": "^3.9.7",

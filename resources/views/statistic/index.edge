@@ -1,0 +1,32 @@
+@layouts.layout({
+    title:"login",
+  })
+  @slot('css')
+    @vite([
+      'resources/css/statistic.css'
+    ])
+  @end
+  <main>
+<div class="container">
+<div class="chart">
+  <canvas id="myChart"></canvas>
+   </div>
+   <div class="charter">
+  <canvas id="Chart"></canvas>
+   </div>
+</div>
+
+
+
+  
+  </main>
+
+  
+  @slot('js')
+  @vite([
+    'resources/js/auth/statistic.js'
+   "https://cdn.jsdelivr.net/npm/chart.js"
+  ])
+  @end
+  @end
+  
