@@ -1,6 +1,9 @@
 @layouts.layout({
     title:"login",
   })
+
+  
+<script src="{{ asset('js/auth/statistic1.js') }}"></script>
   @slot('css')
     @vite([
       'resources/css/statistic.css'
@@ -24,8 +27,8 @@
   
   @slot('js')
   @vite([
-    'resources/js/auth/statistic.js'
-   "https://cdn.jsdelivr.net/npm/chart.js"
+    'resources/js/auth/statistic1.js'
+   
   ])
   @end
   @end
