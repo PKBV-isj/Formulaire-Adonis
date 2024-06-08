@@ -1,3 +1,4 @@
+/* eslint-disable @adonisjs/prefer-lazy-controller-import */
 /*
 |--------------------------------------------------------------------------
 | Routes file
@@ -7,6 +8,11 @@
 |
 */
 
+import AuthController from '#controllers/auth_controller'
 import router from '@adonisjs/core/services/router'
 
-router.on('/aaaa').render('pages/home')
+router.on('/').render('pages/home').as('home')
+
+router.get('/register', [AuthController, 'register']).as('auth.register')
+router.post('/register', [AuthController, 'handleRegister'])
+router.get('/login', [AuthController, 'login']).as('auth.login')
