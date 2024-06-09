@@ -1,0 +1,66 @@
+@layouts.layout({
+    title:"register_form",
+  })
+
+  
+
+  @slot('css')
+    @vite([
+      'resources/css/form/style.css'
+    ])
+  @end
+  
+  <main class="main">
+    <div class="container">
+        <header>Registration form</header>
+        <form action="">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">caracteristique</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>owner</label>
+                            <input type="number" placeholder="Enter the author's name" id="owner" class="owner" required>
+                        </div>
+                        <div class="input-field">
+                            <label>title</label>
+                            <input type="text" placeholder="le titre"  id="title" class="title" required>
+                        </div>
+                        <div class="input-field">
+                            <label>description</label>
+                            <textarea type="text" placeholder="description"  id="description" class="description" required>
+                        </div>
+                      
+                       
+                    </div>
+                </div>
+               
+           
+                   
+                        
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+
+
+  
+  </main>
+
+  
+  @slot('js')
+  @vite([
+    
+
+
+   
+  ])
+  @end
+  @end
+  
