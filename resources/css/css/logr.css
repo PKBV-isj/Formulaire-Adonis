@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+   
+   
+}
+
+
+.containeer{
+    width:100%;
+    height:100vh;
+    background: linear-gradient(45deg,rgb(135 129 255),rgb(20, 20, 20));
+    
+   
+   
+    position:relative;
+}
+.containeer .box{
+    position:absolute;
+    width: 350px;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+    background-color: #fff;
+    padding: 25px 25px 45px 25px;
+    border-radius:20px;
+     
+
+}
+h2{
+    text-align:center;
+    font-size:44px;
+    margin-bottom: 30px;
+    position:relative;
+}
+
+h2::before{
+    position:absolute;
+    content:'';
+    width: 55px;
+    height: 5px;
+    border-radius: 50px;
+    background:linear-gradient(45deg,#875cff,#ff66d7);
+    bottom:8px ;
+
+
+}
+.box .input_box{
+    width:100%
+
+}
+.box .input_box input[type="text"]{
+    width:100%;
+    font-size:26px;
+    margin: 16px 0px;
+    outline:none;
+    border-width: 0px 0px 2px 0px;
+    border-color: #cd7acd;
+
+
+}
+
+.box .input_box input[type="password"]{
+    width:100%;
+    font-size:26px;
+    margin: 16px 0px;
+    outline:none;
+    border-width: 0px 0px 2px 0px;
+    border-color: #cd7acd;
+
+
+}
+.box .input_box label{
+    position: absolute;
+    left:0;
+   
+    font-size: 26px;
+    color:#0000009e;
+    pointer-events:none;
+    transition: 0.2s;
+
+
+}
+.box .input_box input:focus + label,.box .input_box input:valid + label{
+    top: -1px;
+    font-size:18px;
+    color:blue;
+
+    
+}
+.box .input_box .password_checkbox{
+    width: 100%;
+    font-size: 18px;
+    display:flex;
+    justify-content:flex-end ;
+}
+
+.box .input_box .password_checkbox p{
+    margin-left: 8px;
+
+
+}
+.box .s_button{
+    width: 100%;
+    background: linear-gradient(45deg,#875cff,#ff66d7);
+    border: none;
+    padding: 10px 16px;
+    margin-top:30px;
+    font-size: 30px;
+    color: #fff;
+    cursor:pointer;
+    border-radius:50px;
+    transition:0.2;
+}
+
+.box .s_button:active{
+    transform: scale3d(0.9,0.9,0.9);
+
+}
+.box .login_link{
+    font-size:20px ;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.box .login_link a{
+    color:#0000009e;
+    text-decoration: none;
+}
+.box .login_link a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+
+}
+
+
+.box .forgot_password{
+    margin-top:20px;
+    display:inline-block;
+    transition:0.3s
+
+}
+
+.box .forgot_password{
+    color:#000;
+    font-size: 18px;
+    text-decoration: none;
+
+}
+.box .forgot_password:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+
+}
+
+

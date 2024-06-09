@@ -1,0 +1,150 @@
+@layouts.layout({
+    title:"register_form",
+  })
+
+  
+
+  @slot('css')
+    @vite([
+      
+    ])
+  @end
+  
+  <body>
+    <div class="container my-5">
+      <h1>Générateur de Formulaire</h1>
+      <div class="mb-3">
+        <label for="field-count" class="form-label">Nombre de champs :</label>
+        <input type="number" class="form-control" id="field-count" min="1" value="1">
+      </div>
+      <button class="btn btn-primary" onclick="generateForm()">Générer le formulaire</button>
+  
+      <div id="form-container" class="mt-5"></div>
+    </div>
+  
+    <script>
+      function generateForm() {
+        const formContainer = document.getElementById('form-container');
+        formContainer.innerHTML = '';
+  
+        const fieldCount = document.getElementById('field-count').value;
+  
+        for (let i = 1; i <= fieldCount; i++) {
+          const formGroup = document.createElement('div');
+          formGroup.classList.add('form-group', 'mb-3');
+  
+          const label = document.createElement('label');
+          label.classList.add('form-label');
+          label.textContent = `Champ ${i}`;
+          formGroup.appendChild(label);
+  
+          const inputGroup = document.createElement('div');
+          inputGroup.classList.add('input-group');
+  
+          const inputLabel = document.createElement('span');
+          inputLabel.classList.add('input-group-text');
+          inputLabel.textContent = 'Label';
+          inputGroup.appendChild(inputLabel);
+  
+          const labelInput = document.createElement('input');
+          labelInput.classList.add('form-control');
+          labelInput.type = 'text';
+          labelInput.name = `field-${i}-label`;
+          inputGroup.appendChild(labelInput);
+  
+          const typeLabel = document.createElement('span');
+          typeLabel.classList.add('input-group-text');
+          typeLabel.textContent = 'Type';
+          inputGroup.appendChild(typeLabel);
+  
+          const typeInput = document.createElement('select');
+          typeInput.classList.add('form-select');
+          typeInput.name = `field-${i}-type`;
+          const types = ['text', 'number', 'email', 'checkbox', 'radio'];
+          types.forEach(type => {
+            const option = document.createElement('option');
+            option.value = type;
+            option.textContent = type;
+            typeInput.appendChild(option);
+          });
+          inputGroup.appendChild(typeInput);
+  
+          const orderLabel = document.createElement('span');
+          orderLabel.classList.add('input-group-text');
+          orderLabel.textContent = 'Ordre';
+          inputGroup.appendChild(orderLabel);
+  
+          const orderInput = document.createElement('input');
+          orderInput.classList.add('form-control');
+          orderInput.type = 'number';
+          orderInput.name = `field-${i}-order`;
+          inputGroup.appendChild(orderInput);
+  
+          const placeholderLabel = document.createElement('span');
+          placeholderLabel.classList.add('input-group-text');
+          placeholderLabel.textContent = 'Placeholder';
+          inputGroup.appendChild(placeholderLabel);
+  
+          const placeholderInput = document.createElement('input');
+          placeholderInput.classList.add('form-control');
+          placeholderInput.type = 'text';
+          placeholderInput.name = `field-${i}-placeholder`;
+          inputGroup.appendChild(placeholderInput);
+  
+          const requiredLabel = document.createElement('span');
+          requiredLabel.classList.add('input-group-text');
+          requiredLabel.textContent = 'Requis';
+          inputGroup.appendChild(requiredLabel);
+  
+          const requiredInput = document.createElement('input');
+          requiredInput.classList.add('form-check-input');
+          requiredInput.type = 'checkbox';
+          requiredInput.name = `field-${i}-required`;
+          inputGroup.appendChild(requiredInput);
+  
+          const optionsLabel = document.createElement('span');
+          optionsLabel.classList.add('input-group-text');
+          optionsLabel.textContent = 'Options';
+          inputGroup.appendChild(optionsLabel);
+  
+          const optionsInput = document.createElement('input');
+          optionsInput.classList.add('form-control');
+          optionsInput.type = 'text';
+          optionsInput.name = `field-${i}-options`;
+          inputGroup.appendChild(optionsInput);
+  
+          const formIdInput = document.createElement('input');
+          formIdInput.type = 'hidden';
+          formIdInput.name = `field-${i}-formId`;
+          formIdInput.value = 1;
+          inputGroup.appendChild(formIdInput);
+  
+          const removeButton = document.createElement('button');
+          removeButton.classList.add('btn', 'btn-danger');
+          removeButton.textContent = 'Supprimer';
+          removeButton.addEventListener('click', () => formGroup.remove());
+          inputGroup.appendChild(removeButton);
+  
+          formGroup.appendChild(inputGroup);
+          formContainer.appendChild(formGroup);
+        }
+      }
+    </script>
+  </body>
+  
+
+ 
+
+
+
+  
+  @slot('js')
+  @vite([
+    
+
+
+   
+  ])
+  @end
+  @end
+  

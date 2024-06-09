@@ -1,0 +1,59 @@
+@layouts.layout({
+    title:"register_form",
+  })
+
+  
+
+  @slot('css')
+    @vite([
+      
+    ])
+  @end
+  
+ 
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Enregistrement formulaire</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        
+                        <div class="form-group">
+                            <label for="owner">Nom proprio</label>
+                            <input type="text" class="form-control" id="owner" name="owner" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                       
+                      
+
+
+                       
+                      
+
+                        
+                        <button type="submit" class="btn btn-success" action="">S'enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  @slot('js')
+  @vite([
+    
+
+
+   
+  ])
+  @end
+  @end
+  

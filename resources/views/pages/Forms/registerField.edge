@@ -1,0 +1,153 @@
+@layouts.layout({
+    title:"register_form",
+  })
+
+  
+
+  @slot('css')
+    @vite([
+      
+    ])
+  @end
+  
+ 
+  
+
+
+
+
+
+<body>
+    <div class="container">
+      <h1>Créer un nouveau formulaire</h1>
+  
+      <div class="form-group">
+        <label for="field-count" class="font-weight-bold">Nombre de champs</label>
+        <input type="number" class="form-control" id="field-count" min="1" required>
+      </div>
+  
+      <div id="form-fields"></div>
+  
+      <button type="button" class="btn btn-primary" onclick="generateForm()">Valider</button>
+  
+      <div id="generated-form"></div>
+    </div>
+  
+    <script>
+      function generateForm() {
+        const fieldCount = document.getElementById('field-count').value;
+        const formFieldsContainer = document.getElementById('form-fields');
+        formFieldsContainer.innerHTML = '';
+  
+        for (let i = 1; i <= fieldCount; i++) {
+          const formGroup = document.createElement('div');
+          formGroup.classList.add('form-group');
+  
+          const label = document.createElement('label');
+          label.classList.add('font-weight-bold');
+          label.setAttribute('for', `field-${i}-label`);
+          label.textContent = `Champ ${i}`;
+  
+          const labelInput = document.createElement('input');
+          labelInput.classList.add('form-control');
+          labelInput.setAttribute('type', 'text');
+          labelInput.setAttribute('id', `field-${i}-label`);
+          labelInput.setAttribute('placeholder', 'Entrez le label du champ');
+          labelInput.required = true;
+  
+          const typeInput = document.createElement('select');
+          typeInput.classList.add('form-control');
+          typeInput.setAttribute('id', `field-${i}-type`);
+          typeInput.required = true;
+  
+          const typeOptions = ['text', 'email', 'number', 'textarea', 'radio'];
+          typeOptions.forEach(option => {
+            const typeOption = document.createElement('option');
+            typeOption.setAttribute('value', option);
+            typeOption.textContent = option;
+            typeInput.appendChild(typeOption);
+          });
+  
+          const orderInput = document.createElement('input');
+          orderInput.classList.add('form-control');
+          orderInput.setAttribute('type', 'number');
+          orderInput.setAttribute('id', `field-${i}-order`);
+          orderInput.setAttribute('min', '1');
+          orderInput.setAttribute('placeholder', 'Entrez l\'ordre du champ');
+  
+          const placeholderInput = document.createElement('input');
+          placeholderInput.classList.add('form-control');
+          placeholderInput.setAttribute('type', 'text');
+          placeholderInput.setAttribute('id', `field-${i}-placeholder`);
+          placeholderInput.setAttribute('placeholder', 'Entrez le placeholder du champ');
+  
+          const requiredInput = document.createElement('input');
+          requiredInput.classList.add('form-check-input');
+          requiredInput.setAttribute('type', 'checkbox');
+          requiredInput.setAttribute('id', `field-${i}-required`);
+  
+          const requiredLabel = document.createElement('label');
+          requiredLabel.classList.add('form-check-label');
+          requiredLabel.setAttribute('for', `field-${i}-required`);
+          requiredLabel.textContent = 'Champ requis';
+  
+          const optionsInput = document.createElement('input');
+          optionsInput.classList.add('form-control');
+          optionsInput.setAttribute('type', 'text');
+          optionsInput.setAttribute('id', `field-${i}-options`);
+          optionsInput.setAttribute('placeholder', 'Entrez les options (séparées par des virgules)');
+  
+          const formIdInput = document.createElement('input');
+          formIdInput.classList.add('form-control');
+          formIdInput.setAttribute('type', 'number');
+          formIdInput.setAttribute('id', `field-${i}-form-id`);
+          formIdInput.setAttribute('min', '1');
+          formIdInput.setAttribute('placeholder', 'Entrez l\'ID du formulaire');
+  
+          formGroup.appendChild(label);
+          formGroup.appendChild(labelInput);
+          formGroup.appendChild(typeInput);
+          formGroup.appendChild(orderInput);
+          formGroup.appendChild(placeholderInput);
+          formGroup.appendChild(requiredInput);
+          formGroup.appendChild(requiredLabel);
+          formGroup.appendChild(optionsInput);
+          formGroup.appendChild(formIdInput);
+          formFieldsContainer.appendChild(formGroup);
+        }
+      }
+  
+      function submitForm() {
+        const formFieldsContainer = document.getElementById('form-fields');
+        const formFields = formFieldsContainer.querySelectorAll('.form-group');
+        const formData = [];
+  
+        for (const formField of formFields) {
+          const fieldData = {
+            label: formField.querySelector(`#field-${i}-label`).value,
+            type: formField.querySelector(`#field-${i}-type`).value,
+            order: parseInt(formField.querySelector(`#field-${i}-order`).value),
+            placeholder: formField.querySelector(`#field-${i}-placeholder`).value,
+            required: formField.querySelector(`#field-${i}-required`).checked,
+            options: formField.querySelector(`#field-${i}-options`).value,
+            formId: parseInt(formField.querySelector(`#field-${i}-form-id`).value)
+          };
+          formData.push(fieldData);
+        }
+  
+     
+        console.log(formData);
+      }
+    </script>
+  </body>
+  
+  @slot('js')
+  @vite([
+    
+
+
+   
+  ])
+  @end
+  @end
+  
