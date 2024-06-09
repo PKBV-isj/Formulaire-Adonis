@@ -4,18 +4,38 @@
 
   
 <script src="{{ asset('js/auth/statistic1.js') }}"></script>
+<script src="{{ asset('js/auth/statistic2.js') }}"></script>
+<script src="{{ asset('js/auth/statistic3.js') }}"></script>
   @slot('css')
     @vite([
       'resources/css/statistic.css'
     ])
   @end
-  <main>
+  <main class="main">
 <div class="container">
 <div class="chart">
   <canvas id="myChart"></canvas>
    </div>
+  
+  
+  
    <div class="charter">
-  <canvas id="Chart"></canvas>
+  <canvas id="Charte"></canvas>
+   </div>
+
+
+    <div class="charter">
+  <canvas id="physique"></canvas>
+   </div>
+</div>
+
+<div class="charter">
+  <canvas id="physique"></canvas>
+   </div>
+</div>
+
+<div class="Charter">
+  <canvas id="Charter"></canvas>
    </div>
 </div>
 
@@ -27,7 +47,12 @@
   
   @slot('js')
   @vite([
-    'resources/js/auth/statistic1.js'
+    'resources/js/auth/statistic1.js',
+    'resources/js/auth/statistic2.js',
+    'resources/js/auth/statistic3.js',
+    'resources/js/auth/statistic4.js'
+
+
    
   ])
   @end

@@ -1,13 +1,12 @@
-
 console.log('statistic1.js is loaded');
-  const ctx = document.getElementById('myChart');
-const myChart = new Chart(ctx, {
-    type: 'bar',
+  const ctxE = document.getElementById('Charter');
+const Charter = new Chart(ctxE, {
+    type: 'doughnut',
     data: {
         labels: ['Red', 'Blue', 'Yellow'],
         datasets: [{
             label: '# of Votes',
-            data: [1, 19, 3],//RECUPERATION DES STAT DES FORMULAIRES
+            data: [333, 19, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -29,8 +28,3 @@ const myChart = new Chart(ctx, {
         }
     }
 });
-
-
-
-
-
