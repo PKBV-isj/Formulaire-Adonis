@@ -5,10 +5,16 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
-
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
+      table.increments('id').notNullable()
+      table.string('label').notNullable()
+      table.string('type').notNullable()
+      table.integer('order').nullable()
+      table.string('placeholder').nullable()
+      table.boolean('required').notNullable()
+      table.string('options').nullable()
+      table.integer('formId').unsigned().references('id').inTable('forms').onDelete('CASCADE')
+      table.timestamp('created_at').notNullable()
+      table.timestamp('updated_at').nullable()
     })
   }
 
